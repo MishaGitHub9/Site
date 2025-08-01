@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Password Reset</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Supabase Password Reset</h1>
+        
+        <div>
+            <h2>Доступні сторінки:</h2>
+            <ul>
+                <li><a href="reset-password.html">Скидання пароля</a> - основна сторінка для скидання пароля</li>
+                <li><a href="test-reset.html">Тестова сторінка</a> - для тестування функціональності</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2>Інструкції:</h2>
+            <ol>
+                <li>Налаштуйте Supabase URL Configuration</li>
+                <li>Встановіть Site URL: <code>https://mishagithub9.github.io/Site/</code></li>
+                <li>Встановіть Redirect URLs: <code>https://mishagithub9.github.io/Site/reset-password.html</code></li>
+                <li>Відправте запит на скидання пароля через Supabase</li>
+                <li>Користувач отримає email з посиланням на цю сторінку</li>
+            </ol>
+        </div>
+        
+        <div>
+            <h2>Поточний URL:</h2>
+            <p id="currentUrl"></p>
+        </div>
+    </div>
+
+    <script>
+        // Показуємо поточний URL
+        document.getElementById('currentUrl').textContent = window.location.href;
+    </script>
+</body>
+</html>

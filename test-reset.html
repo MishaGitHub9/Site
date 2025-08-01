@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест скидання пароля</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Тест скидання пароля</h1>
+        
+        <div>
+            <h2>Інструкції для тестування:</h2>
+            <ol>
+                <li>Відправте запит на скидання пароля через Supabase Dashboard або API</li>
+                <li>Перейдіть за посиланням з email</li>
+                <li>Посилання має виглядати як: <code>https://yourdomain.com/reset-password.html?access_token=...&refresh_token=...</code></li>
+            </ol>
+        </div>
+        
+        <div>
+            <h2>Поточний URL:</h2>
+            <p id="currentUrl"></p>
+        </div>
+        
+        <div>
+            <h2>Параметри URL:</h2>
+            <pre id="urlParams"></pre>
+        </div>
+        
+        <div>
+            <a href="reset-password.html">Перейти до сторінки скидання пароля</a>
+        </div>
+    </div>
+
+    <script>
+        // Показуємо поточний URL
+        document.getElementById('currentUrl').textContent = window.location.href;
+        
+        // Показуємо параметри URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const params = {};
+        for (const [key, value] of urlParams) {
+            params[key] = value;
+        }
+        document.getElementById('urlParams').textContent = JSON.stringify(params, null, 2);
+    </script>
+</body>
+</html> 
